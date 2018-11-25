@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.ImageView;
 
-public class DisplayActivity extends AppCompatActivity {
+public class InfoStudentActivity extends AppCompatActivity {
 
     private ImageView img;
     private EditText fullName;

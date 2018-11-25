@@ -8,7 +8,7 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 
-public class MainActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     private ImageButton btnClear;
     private ImageButton btnAccept;
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         {
             if(verify(email.getText().toString(),pass.getText().toString()))
             {
-                Intent intent  = new Intent(this, MenuActivity.class);
+                Intent intent  = new Intent(this, DisplayListActivity.class);
                 startActivity(intent);
             }
             else {
