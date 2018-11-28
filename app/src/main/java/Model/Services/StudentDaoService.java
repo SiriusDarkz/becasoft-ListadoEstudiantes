@@ -36,6 +36,16 @@ public class StudentDaoService {
 
 
     }
+    public void add(String fullName, String career, String gender, String address, String dateOfBirth, int img) {
+        add(new Student(fullName,career,gender,address,dateOfBirth,img));
+    }
+
+    public void add(Student student) {
+        if(student.getImg() == 0)
+            student.setImg(R.drawable.unkown);
+
+        studentDAO.add(student);
+    }
 
     public void close() {
         studentDAO.close();
