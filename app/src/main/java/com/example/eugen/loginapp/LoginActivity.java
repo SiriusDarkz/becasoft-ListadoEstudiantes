@@ -32,7 +32,6 @@ public class LoginActivity extends AppCompatActivity {
             if(verify(email.getText().toString(),pass.getText().toString()))
             {
                 Intent intent  = new Intent(this, DisplayListActivity.class);
-                intent.setFlags()
                 startActivity(intent);
             }
             else {
@@ -43,7 +42,6 @@ public class LoginActivity extends AppCompatActivity {
 
 
     }
-
     private void initializeComponents() {
 
         email = findViewById(R.id.email);
