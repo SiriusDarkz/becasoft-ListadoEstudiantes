@@ -19,7 +19,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
          initializeComponents();
         btnClear.setOnClickListener(v -> {
                 email.setText("");
@@ -32,6 +32,7 @@ public class LoginActivity extends AppCompatActivity {
             if(verify(email.getText().toString(),pass.getText().toString()))
             {
                 Intent intent  = new Intent(this, DisplayListActivity.class);
+                intent.setFlags()
                 startActivity(intent);
             }
             else {
