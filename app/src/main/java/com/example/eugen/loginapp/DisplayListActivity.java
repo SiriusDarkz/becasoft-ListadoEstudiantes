@@ -12,6 +12,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -60,16 +61,19 @@ public class DisplayListActivity extends AppCompatActivity {
         });
         recyclerView = findViewById(R.id.listStudents);
         recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
-        RecyclerView.ItemDecoration itemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
-        recyclerView.addItemDecoration(itemDecoration);
+//        RecyclerView.ItemDecoration itemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
+//        recyclerView.addItemDecoration(itemDecoration);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
         recyclerView.setAdapter(adapter);
         studentDaoService.close();
 
+
+
         FloatingActionButton floatingActionButton = findViewById(R.id.fab);
         floatingActionButton.setImageResource(R.drawable.add);
-            floatingActionButton.setScaleType(ImageView.ScaleType.CENTER);
+        floatingActionButton.setScaleType(ImageView.ScaleType.CENTER);
+        floatingActionButton.setSize(FloatingActionButton.SIZE_MINI);
         floatingActionButton.setOnClickListener(v -> {
             Intent registryIntent = new Intent(this, RegistryActivity.class);
             startActivity(registryIntent);
@@ -88,8 +92,15 @@ public class DisplayListActivity extends AppCompatActivity {
                                              }
                                          }
         );
-
     }
 
-
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//        studentDaoService = new StudentDaoService(ConnectionManager.getConnection(this, "new"));
+//        adapter.setStudents(studentDaoService.getStudents());
+//        studentDaoService.close();
+//        recyclerView.hasPendingAdapterUpdates();
+//
+//    }
 }

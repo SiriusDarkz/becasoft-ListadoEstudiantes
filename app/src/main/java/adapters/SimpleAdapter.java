@@ -14,11 +14,12 @@ import android.widget.TextView;
 
 import com.example.eugen.loginapp.R;
 
+import java.io.Serializable;
 import java.util.List;
 
 import Model.entities.Student;
 
-public class SimpleAdapter  extends RecyclerView.Adapter<SimpleAdapter.ViewHolder>{
+public class SimpleAdapter  extends RecyclerView.Adapter<SimpleAdapter.ViewHolder> {
 
     private List<Student> students;
     private LayoutInflater inflater;
@@ -87,7 +88,7 @@ public class SimpleAdapter  extends RecyclerView.Adapter<SimpleAdapter.ViewHolde
     }
 
 
-    public class ViewHolder extends RecyclerView.ViewHolder  implements View.OnClickListener{
+    public class ViewHolder extends RecyclerView.ViewHolder  implements View.OnClickListener {
 
        private TextView fullName;
        private ImageView photo;

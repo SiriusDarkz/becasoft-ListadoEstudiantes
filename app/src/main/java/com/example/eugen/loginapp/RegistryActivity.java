@@ -1,11 +1,13 @@
 package com.example.eugen.loginapp;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.SimpleAdapter;
 
 import Model.Services.StudentDaoService;
 import Model.conections.ConnectionManager;
@@ -40,16 +42,20 @@ public class RegistryActivity extends AppCompatActivity {
                     editBirthDate.getText().toString(),
                     0
             );
+            studentDaoService.close();
+            cleanComponents();
 
 
+        });
 
-        } );
+    }
 
-
-
-
-
-
+    private void cleanComponents() {
+        editBirthDate.setText("");
+        editAddress.setText("");
+        editGender.setText("");
+        editCareer.setText("");
+        editFullName.setText("");
     }
 
     private  void initComponents() {
@@ -65,7 +71,9 @@ public class RegistryActivity extends AppCompatActivity {
         actionBar.setTitle("New Student");
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayShowHomeEnabled(true);
-        toolbar.setNavigationOnClickListener(v -> onBackPressed());
+        toolbar.setNavigationOnClickListener(v ->  {
+          onBackPressed();
+        });
 
 
 

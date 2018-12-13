@@ -2,6 +2,7 @@ package adapters;
 
 import android.view.View;
 
+import java.io.Serializable;
 
 
 public interface OnItemClickListener {
